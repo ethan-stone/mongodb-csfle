@@ -55,8 +55,9 @@ const schema = {
   }
 };
 
-const patientSchema: Record<string, any> = {};
-patientSchema[keyVaultNamespace] = schema;
+const patientSchema: Record<string, any> = {
+  "medicalRecords.patients": schema
+};
 
 const secureClient = new MongoClient(mongoUrl, {
   autoEncryption: {
